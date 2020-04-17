@@ -1,3 +1,5 @@
+
+
 // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyCSf68r57bQOzB2NyRCQg6pm2fPjgRdj_U",
@@ -11,6 +13,7 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
+var dataset = firebase.database().ref("dataset");
 
 // write new dataset to database
 
