@@ -1,27 +1,77 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>My test page</title>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+
+<!-- Load the jQuery library, which we'll use to manipulate HTML elements with Javascript. -->
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+    <!-- Load Bootstrap stylesheet, which will is CSS that makes everything prettier and also responsive (aka will work on all devices of all sizes). -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	
+   <!--  <meta charset="utf-8">
+    <nodepos>BOWDS</nodepos>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
-    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <link href="styles/style.css" rel="stylesheet" type="text/css"> -->
+	
   </head>
   <body>
-    <h1>This is wild!</h1>
-    <img src="images/firefox-icon.png" alt="The Firefox logo: a flaming fox surrounding the Earth.">
-
-    <p>Here on team 15, we love</p>
-
-    <ul> <!-- changed to list in the tutorial -->
-      <li>Forests</li>
-      <li>No fires</li>
-      <li>Power!</li>
-    </ul>
-
-    <p>working together to keep the forests of the world safe from fire and the power lines clear of trees and brush.</p>
-
-    <p>Read the <a href="https://www.mozilla.org/en-US/about/manifesto/">Mozilla Manifesto</a> to learn even more about the values and principles that guide the pursuit of our mission.</p>
-  <button>Change user</button>
   <script src="scripts/main.js"></script>
+  
+    <div class="container">
+      <<h1>Welcome to The Brush Observation and Wildfire Detection nodal information website!</h1>
+
+      <h3>Data</h3>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nodal Position</th>
+            <th>Time</th>
+            <th>Temp</th>
+			<th>Gas particulate concentration</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <!-- This is empty for now, but it will be filled out by an event handler in application.js with the most recent recommendation data from Firebase. -->
+            <td id="nodepos"></td>
+            <td id="time"></td>
+            <td id="temp"></td>
+			<td id="co"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Submit a Dataset</h3>
+
+      <form id="recommendationForm">
+        <div class="form-group">
+          <label for="talknodepos">Position of the Node</label>
+          <input class="form-control" id="talknodepos" placeholder="Position of the Node">
+        </div>
+
+        <div class="form-group">
+          <label for="talktime">Time</label>
+          <input class="form-control" id="talktime" placeholder="Time data was taken">
+        </div>
+
+        <div class="form-group">
+          <label for="talktemp">Temperature</label>
+          <input class="form-control" id="talktemp" placeholder="Temperature">
+        </div>
+		
+		<div class="form-group">
+          <label for="talkco">CO Concentration</label>
+          <input class="form-control" id="talkco" placeholder="Concentration of CO particulates">
+        </div>
+
+        <!-- When you click this button, trigger the submit event on this form. -->
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+  
+
   </body>
 </html>
