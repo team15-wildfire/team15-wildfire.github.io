@@ -2,7 +2,7 @@
 <html>
   <head>
   <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
 
 <!-- Load the jQuery library, which we'll use to manipulate HTML elements with Javascript. -->
     <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
@@ -17,20 +17,7 @@
   
   
   <body>
-  <script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyCSf68r57bQOzB2NyRCQg6pm2fPjgRdj_U",
-    authDomain: "team15-wildfire-test.firebaseapp.com",
-    databaseURL: "https://team15-wildfire-test.firebaseio.com",
-    projectId: "team15-wildfire-test",
-    storageBucket: "team15-wildfire-test.appspot.com",
-    messagingSenderId: "227586916308",
-    appId: "1:227586916308:web:c7525b7bd868c9835ee041"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-</script>
+  
 
   <script src="scripts/main.js"></script>
   
@@ -61,7 +48,7 @@
 
       <h3>Submit a Dataset</h3>
 
-      <form id="recommendationForm">
+      <form id="datasetForm">
         <div class="form-group">
           <label for="talknodepos">Position of the Node</label>
           <input class="form-control" id="talknodepos" placeholder="Position of the Node">

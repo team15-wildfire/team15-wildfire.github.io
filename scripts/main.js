@@ -38,7 +38,7 @@ var dataset = firebase.database().ref("dataset");
 // update the table with its values. This is called every time the child_added
 // event is triggered on the datasets Firebase reference, which means
 // that this will update EVEN IF you don't refresh the page. Magic.
-datasets.limitToLast(1).on('child_added', function(childSnapshot) {
+dataset.limitToLast(1).on('child_added', function(childSnapshot) {
   // Get the dataset data from the most recent snapshot of data
   // added to the datasets list in Firebase
   dataset = childSnapshot.val();
@@ -60,7 +60,7 @@ datasets.limitToLast(1).on('child_added', function(childSnapshot) {
 $(window).load(function () {
 
   // Find the HTML element with the id datasetForm, and when the submit
-  // event is triggered on that element, call submitdataset.
-  $("#datasetForm").submit(submitdataset);
+  // event is triggered on that element, call submitDataset.
+  $("#datasetForm").submit(submitDataset);
 
 });
