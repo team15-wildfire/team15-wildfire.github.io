@@ -1,7 +1,4 @@
-// TODO: Replace with your project's config object. You can find this
-// by navigating to your project's console overview page
-// (https://console.firebase.google.com/project/your-project-id/overview)
-// and clicking "Add Firebase to your web app"
+
 var firebaseConfig = {
     apiKey: "AIzaSyCSf68r57bQOzB2NyRCQg6pm2fPjgRdj_U",
     authDomain: "team15-wildfire-test.firebaseapp.com",
@@ -38,28 +35,26 @@ var submitdataset = function () {
 
 
 
-// Get the single most recent dataset from the database and
-// update the table with its values. This is called every time the child_added
-// event is triggered on the datasets Firebase reference, which means
-// that this will update EVEN IF you don't refresh the page. Magic.
-datasets.limitToLast(1).on('child_added', function(childSnapshot) {
+// Get the single most recent dataset from the database and append it to the already shown data
+datasets.once("value").then(function(snapshot) {
+snapshot.forEach(function(childSnapshot){
   // Get the dataset data from the most recent snapshot of data
   // added to the datasets list in Firebase
-  dataset = childSnapshot.val();
-
+  childdataset = childSnapshot.val();
+  var node_pos_val = childSnapshot.val().nodepos
+  var time_val = childSnapshot.val().time
+  var temp_val = childSnapshot.val().temp
+  var co_val = childSnapshot.val().co
   // Update the HTML to display the dataset text
-  $("#nodepos").html(dataset.nodepos)
-  $("#time").html(dataset.time)
-  $("#temp").html(dataset.temp)
-  $("#co").html(dataset.co)
-  
-});
+   $("#nodepos").append("<p>" + node_pos_val + "</p><br>")
+  $("#time").append("<p>" + temp_val + "</p><br>")
+  $("#temp").append("<p>" + time_val + "</p><br>")
+  $("#co").append("<p>" + co_val + "</p><br>") 
 
+});
+});
 // When the window is fully loaded, call this function.
-// Note: because we are attaching an event listener to a particular HTML element
-// in this function, we can't do that until the HTML element in question has
-// been loaded. Otherwise, we're attaching our listener to nothing, and no code
-// will run when the submit button is clicked.
+// tells the thing to update when the submit button is pressed, makes it so the user doesn't have to reload the page to get new data
 $(window).load(function () {
 
   // Find the HTML element with the id datasetForm, and when the submit
