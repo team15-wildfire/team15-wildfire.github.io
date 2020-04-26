@@ -13,19 +13,20 @@
   <body>
     <!-- Load the application script, which will save data to our Firebase app. -->
     <script src="scripts/main.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 
     <div class="container">
       <h1>Welcome to The Brush Observation and Wildfire Detection Nodal Information Website!</h1>
-
+      <h2>Everything is Fine</h2>
       <h3>Datasets</h3>
 
       <table class="table table-striped">
         <thead>
           <tr>
             <th>Node Position</th>
-            <th>Time Submitted</th>
-            <th>Temperature(degrees fahrenheight)</th>
-			<th>CO Gas Concentration(parts per million)</th>
+            <th>Time Submitted(24 hour clock)</th>
+            <th>Temperature(degrees fahrenheight)</th>      
+			      <th>CO Gas Concentration(parts per million)</th>
           </tr>
         </thead>
         <tbody>
@@ -39,7 +40,7 @@
         </tbody>
       </table>
 
-      <h3>Submit a Dataset</h3>
+      <h4>Submit a Dataset</h4>
 
       <form id="datasetForm">
         <div class="form-group">
@@ -48,7 +49,7 @@
         </div>
 
         <div class="form-group">
-          <label for="talktime">Time sample was taken</label>
+          <label for="talktime">Time sample was taken(24 hour clock)</label>
           <input class="form-control" id="talktime" placeholder="Time the sample was taken">
         </div>
 		
@@ -61,12 +62,14 @@
           <label for="talkco">CO Gas Concentration(parts per million)</label>
           <input class="form-control" id="talkco" placeholder="Concentration of CO gas particulates">
         </div>
-
         
-
         <!-- When you click this button, trigger the submit event on this form. -->
         <button type="submit" class="btn btn-default">Submit</button>
+        
+        
       </form>
     </div>
+    
   </body>
 </html>
+
