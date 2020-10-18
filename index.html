@@ -24,9 +24,10 @@
         <thead>
           <tr>
             <th>Node Position</th>
-            <th>Time Submitted(24 hour clock)</th>
+            <th>Date Submitted(Year-Month-Day T 24 hour time Z)</th>
             <th>Temperature(degrees fahrenheight)</th>      
-			      <th>CO Gas Concentration(parts per million)</th>
+            <th>CO Gas Concentration(parts per million)</th>
+            <th>Smoke Concentration(parts per million)</th>
           </tr>
         </thead>
         <tbody>
@@ -35,7 +36,8 @@
             <td id="nodepos"></td>
             <td id="time"></td>
             <td id="temp"></td>
-			<td id="co"></td>
+            <td id="co"></td>
+            <td id="smoke"></td>
           </tr>
         </tbody>
       </table>
@@ -63,6 +65,11 @@
           <input class="form-control" id="talkco" placeholder="Concentration of CO gas particulates">
         </div>
         
+    <div class="form-group">
+          <label for="talksmoke">Smoke Concentration(parts per million)</label>
+          <input class="form-control" id="talksmoke" placeholder="Concentration of smoke particulates">
+        </div>
+        
         <!-- When you click this button, trigger the submit event on this form. -->
         <button type="submit" class="btn btn-default">Submit</button>
         
@@ -72,4 +79,3 @@
     
   </body>
 </html>
-
