@@ -8,6 +8,12 @@
 
     <!-- Load Bootstrap stylesheet, which will is CSS that makes everything prettier and also responsive (aka will work on all devices of all sizes). -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <style>
+      img{
+        max-width: auto;
+        max-height: 55px;
+      }
+      </style>
   </head>
 
   <body>
@@ -28,6 +34,7 @@
             <th>Temperature(degrees fahrenheight)</th>      
             <th>CO Gas Concentration(parts per million)</th>
             <th>Smoke Concentration(parts per million)</th>
+            <th>image(black square if no image available)</th>
           </tr>
         </thead>
         <tbody>
@@ -38,6 +45,7 @@
             <td id="temp"></td>
             <td id="co"></td>
             <td id="smoke"></td>
+            <td id="image"></td>
           </tr>
         </tbody>
       </table>
@@ -69,7 +77,11 @@
           <label for="talksmoke">Smoke Concentration(parts per million)</label>
           <input class="form-control" id="talksmoke" placeholder="Concentration of smoke particulates">
         </div>
-        
+
+        <div class="form-group">
+          <label for="talkimage">image url</label>
+          <input class="form-control" id="talkimage" placeholder="image url">
+        </div>
         <!-- When you click this button, trigger the submit event on this form. -->
         <button type="submit" class="btn btn-default">Submit</button>
         
@@ -79,3 +91,4 @@
     
   </body>
 </html>
+

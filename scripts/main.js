@@ -40,6 +40,7 @@ var submitdataset = function () {
   var temp = $("#talktemp").val();
   var co = $("#talkco").val();
   var smoke = $("#talksmoke").val();
+  var image = $("#talkimage").val();
 
   // Push a new dataset to the database using those values
   datasets.push({
@@ -47,7 +48,8 @@ var submitdataset = function () {
     "time": time,
     "temp": temp,
     "co": co,
-    "smoke": smoke
+    "smoke": smoke,
+    "image": image
   });
 };
 
@@ -66,6 +68,10 @@ snapshot.forEach(function(childSnapshot){
   var temp_val = childSnapshot.val().temp
   var co_val = childSnapshot.val().co
   var smoke_val = childSnapshot.val().smoke
+  var image_val = childSnapshot.val().image
+  if(image_val == 0){
+    image_val = "https://static.wikia.nocookie.net/open-source-objects/images/e/e1/Black_Square_Asset.png/revision/latest?cb=20190430182133";
+  }
   if(temp_val>120 && co_val>1500){
     myHeading.innerHTML='Alarm at node ' + node_pos_val +' at time ' + time_val;
     
@@ -78,7 +84,7 @@ snapshot.forEach(function(childSnapshot){
   $("#temp").append("<p>" + temp_val + "</p><br>")
   $("#co").append("<p>" + co_val + "</p><br>")
   $("#smoke").append("<p>" + smoke_val + "</p><br>")
-
+  $("#image").append("<img src=" + image_val + "></img><br>")
 });
 });
 
@@ -111,22 +117,22 @@ $(window).load(function () {
 let myHeading2 = document.querySelector('h5');
 
 function setUserEmail() {
-let myEmail = prompt('Please enter your email to recieve warning messages.');
-if(!myEmail || myEmail === null) {
-  setUserEmail();
-} else {
-  localStorage.setItem('email', myEmail);
-  myHeading2.innerHTML = 'The email recieving a warning is ' + myEmail;
-}
+  let myEmail = prompt('Please enter your email to recieve warning messages.');
+  if(!myEmail || myEmail === null) {
+    setUserEmail();
+  } else {
+    localStorage.setItem('email', myEmail);
+    myHeading2.innerHTML = 'The email recieving a warning is ' + myEmail;
+  }
 }
 
 if(!localStorage.getItem('email')) {
-setUserEmail();
+  setUserEmail();
 } else {
-let storedEmail = localStorage.getItem('email');
-myHeading2.innerHTML = 'The email recieving a warning is ' + storedEmail;
+  let storedEmail = localStorage.getItem('email');
+  myHeading2.innerHTML = 'The email recieving a warning is ' + storedEmail;
 }
 
 myButton.onclick = function() {
-setUserEmail();
+  setUserEmail();
 } */
