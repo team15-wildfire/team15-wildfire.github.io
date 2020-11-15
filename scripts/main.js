@@ -72,7 +72,7 @@ snapshot.forEach(function(childSnapshot){
   if(image_val == 0){
     image_val = "https://static.wikia.nocookie.net/open-source-objects/images/e/e1/Black_Square_Asset.png/revision/latest?cb=20190430182133";
   }
-  if(temp_val>120 && (co_val>1.1 || smoke_val>1500)){
+  if(temp_val>49 && (co_val>1.3 || smoke_val>10000)){
     myHeading.innerHTML='Alarm at node ' + node_pos_val +' at time ' + time_val;
     
   }
@@ -94,7 +94,7 @@ datasetsCheck.limitToLast(1).on('child_added', function(childSnapshot) {
   var temp_val_check = childSnapshot.val().temp
   var co_val_check = childSnapshot.val().co
   var smoke_val_check = childSnapshot.val().smoke
-  if(temp_val_check>120 && (co_val_check>1.1 || smoke_val_check > 1500)){
+  if(temp_val_check>49 && (co_val_check>1.3 || smoke_val_check > 10000)){
     Body="There is an alarm going off at node "+node_pos_val_check+" at time "+time_val_check+" with temperature "+temp_val_check+" (degrees farenheight), gas at a concentration of "+co_val_check+" parts per million and at a smoke concentration of "+smoke_val_check+" parts per million"
    sendEmail(Body);
     
