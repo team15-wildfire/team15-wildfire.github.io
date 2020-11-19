@@ -6,4 +6,6 @@ https://github.com/fustyles/Arduino/tree/master/ESP32-CAM_Firebase
 Here is a link to the source library I used to connect to firebase:
 https://github.com/mobizt/Firebase-ESP32
 
+I largely based off my code from their example starter code. I added and changed lines as I saw fit for our specific application.
+
 Abbigail Brown
