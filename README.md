@@ -3,7 +3,9 @@ team15-wildfire.github.io
 Github hosted site for our combined code.
 
 Abbigail Brown - ESP32 and Camera
+
 Jacob Ary - Website and Database
+
 Luke Horne - Microcontroller
 
 What is the actual problem and how does BOWDS solve it?
