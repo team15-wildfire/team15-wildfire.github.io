@@ -1,19 +1,10 @@
-/*
-ESP32-CAM Save a captured photo(Base64) to firebase. 
-Author : ChungYi Fu (Kaohsiung, Taiwan)  2019-8-16 23:00
-https://www.facebook.com/francefu
-Arduino IDE Library
-Firebase ESP32 Client by Mobizt version 3.2.1
-ESP32-CAM How to save a captured photo to Firebase
-https://youtu.be/Hx7bdpev1ug
-How to set up Firebase
-https://iotdesignpro.com/projects/iot-controlled-led-using-firebase-database-and-esp32
-*/ //copyright information for the github information that I got the library header files from 
+//https://github.com/mobizt/Firebase-ESP32 //firebase library
+//https://github.com/fustyles/Arduino/tree/master/ESP32-CAM_Firebase //camera library
+//copyright information for the github information that I got the library header files from 
 
 const char* ssid = "Poussay"; //wifi id name
 const char* password = "about.059.pulse"; //wifi password
 
-//https://console.firebase.google.com/project/xxxxxxxxxx/settings/serviceaccounts/databasesecrets
 String FIREBASE_HOST = "team15-wildfire-test.firebaseio.com"; //firebase website name
 String FIREBASE_AUTH = "P7adK8risk2kaw5Q6rcEr46EYdDMCGTU0DO7zcaF"; //firebase secret authentication code
 
